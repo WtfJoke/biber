@@ -36,14 +36,13 @@
 # version.
 
 declare -r perlv='5.26.0'
-#declare ucpath="/usr/local/perl/lib/${perlv}/Unicode/Collate"
-declare ucpath="/usr/local/lib/perl5/site_perl/Unicode/Collate"
+declare ucpath="/usr/local/lib/perl5/${perlv}/Unicode/Collate"
 
 # Unicode::Collate has a site_perl version so has been updated since this
 # perl was released
-if [ -d "/usr/local/perl/lib/site_perl/${perlv}/x86_64-linux-thread-multi/Unicode/Collate" ]
+if [ -d "/usr/local/lib/perl5/site_perl/${perlv}/x86_64-linux-thread-multi/Unicode/Collate" ]
 then
-  ucpath="/usr/local/perl/lib/site_perl/${perlv}/x86_64-linux-thread-multi/Unicode/Collate"
+  ucpath="/usr/local/lib/perl5/site_perl/${perlv}/x86_64-linux-thread-multi/Unicode/Collate"
 fi
 
 echo "USING Unicode::Collate at: ${ucpath}"
@@ -76,8 +75,8 @@ PAR_VERBATIM=1 /usr/bin/pp \
   --link=/lib/libz.so.1 \
   --link=/usr/lib/libxslt.so.1 \
   --link=/usr/lib/libexslt.so.0 \
-  --link=/usr/lib/libssl.so.0.9.8 \
-  --link=/usr/lib/libcrypto.so.0.9.8 \
+  --link=/usr/lib/libssl.so.1.0.0 \
+  --link=/usr/lib/libcrypto.so.1.0.0 \
   --addfile="../../data/biber-tool.conf;lib/Biber/biber-tool.conf" \
   --addfile="../../data/schemata/config.rnc;lib/Biber/config.rnc" \
   --addfile="../../data/schemata/config.rng;lib/Biber/config.rng"\
