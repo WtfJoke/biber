@@ -88,10 +88,9 @@ PAR_VERBATIM=1 /usr/local/bin/pp \
   --addfile="${ucpath}/CJK;lib/Unicode/Collate/CJK" \
   --addfile="${ucpath}/allkeys.txt;lib/Unicode/Collate/allkeys.txt" \
   --addfile="${ucpath}/keys.txt;lib/Unicode/Collate/keys.txt" \
-  --addfile="/usr/local/share/perl5/site_perl/Mozilla/CA/cacert.pem;lib/Mozilla/CA/cacert.pem" \
-  --addfile="/usr/local/lib/perl5/site_perl/PerlIO;lib/PerlIO" \
-  --addfile="/usr/local/lib/perl5/site_perl/auto/PerlIO;lib/auto/PerlIO" \
-  --addfile="/usr/local/share/perl5/site_perl/Business/ISBN/RangeMessage.xml;lib/Business/ISBN/RangeMessage.xml" \
+  --addfile="/usr/local/lib/perl5/site_perl/${perlv}/Mozilla/CA/cacert.pem" \
+  --addfile="/usr/local/lib/perl5/${perlv}/PerlIO" \
+  --addfile="/usr/local/lib/perl5/site_perl/${perlv}/Business/ISBN/RangeMessage.xml" \
   --cachedeps=scancache \
   --output=/opt/biber \
   /usr/local/bin/biber
